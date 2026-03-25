@@ -8,13 +8,25 @@ It is named after historian and linguist Abdurauf Fitrat, who was one of the cre
 
 <br />
 
-## Usage
+## Requirements
 
-### Installation
+- Python 3.10 - 3.12
+
+## Installation
+
+### pip
 
 ```shell
 pip install fitrat
 ```
+
+### uv
+
+```shell
+uv add fitrat
+```
+
+## Usage
 
 ### Transliteration
 
@@ -57,7 +69,7 @@ print(lang_detector.is_uzbek("Текст на русском языке"))
 # False
 ```
 
-## Tokenization
+### Tokenization
 
 ```python
 from fitrat import word_tokenize
@@ -65,6 +77,49 @@ from fitrat import word_tokenize
 s = "Bugun o'zbekchada gapirishga qaror qildim!"
 print(word_tokenize(s))
 # ['Bugun', "o'zbekchada", 'gapirishga', 'qaror', 'qildim', '!']
+```
+
+## Development
+
+### Setup
+
+```shell
+# uv (recommended)
+uv sync --group dev
+
+# pip
+pip install -r requirements-dev.txt
+pip install -e .
+```
+
+### Running tests
+
+```shell
+# uv
+uv run pytest
+
+# pip
+pytest
+```
+
+### Linting
+
+```shell
+# uv
+uv run ruff check src/
+
+# pip
+ruff check src/
+```
+
+### Type checking
+
+```shell
+# uv
+uv run pyright src/
+
+# pip
+pyright src/
 ```
 
 ## Authors
